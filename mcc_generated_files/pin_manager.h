@@ -79,6 +79,7 @@
 #define Relay_SW_SetAnalogMode()      do { ANSELAbits.ANSA2 = 1; } while(0)
 #define Relay_SW_SetDigitalMode()     do { ANSELAbits.ANSA2 = 0; } while(0)
 
+
 // get/set LED_SW aliases
 #define LED_SW_TRIS                 TRISAbits.TRISA4
 #define LED_SW_LAT                  LATAbits.LATA4

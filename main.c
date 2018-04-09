@@ -54,9 +54,14 @@ void main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
+    //WPUAbits.WPUA4 = 1;
 
+    
     TMR2_SetInterruptHandler(relayTimerCallBack);
     TMR0_SetInterruptHandler(timeCallBack);
+    
+   // while( PORTAbits.RA3);
+    
     // Enable the Global Interrupts
     INTERRUPT_GlobalInterruptEnable();
 
@@ -68,7 +73,9 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-
+    
+    TMR0_StartTimer();
+    TMR2_StartTimer();
     while (1)
     {
         // Add your application code
@@ -78,7 +85,8 @@ void main(void)
 void relayTimerCallBack()
 {
     Relay_SW_Toggle();
-    return;
+    LED_SW_Toggle();
+    return; // 4
 }
 
 void timeCallBack()
