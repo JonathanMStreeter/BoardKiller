@@ -123,7 +123,7 @@ void TMR2_ISR(void)
     // clear the TMR2 interrupt flag
     PIR1bits.TMR2IF = 0;
 
-    // callback function - called every 25th pass
+    // callback function - called every 250th pass
     if (++CountCallBack >= TMR2_INTERRUPT_TICKER_FACTOR)
     {
         // ticker function call

@@ -52,8 +52,8 @@
 #include <stdbool.h>
 #include "interrupt_manager.h"
 #include "tmr2.h"
-#include "adc.h"
 #include "tmr0.h"
+#include "adc.h"
 
 #define _XTAL_FREQ  32000000
 
