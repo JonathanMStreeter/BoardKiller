@@ -66,11 +66,11 @@ void ADC_Initialize(void)
 {
     // set the ADC to the options selected in the User Interface
     
-    // ADGO stop; ADON enabled; CHS ANA0; 
-    ADCON0 = 0x01;
+    // ADGO start; ADON enabled; CHS ANA2; 
+    ADCON0 = 0x0B;
     
-    // ADFM right; ADNREF VSS; ADPREF VDD; ADCS FOSC/32; 
-    ADCON1 = 0xA0;
+    // ADFM right; ADNREF VSS; ADPREF VDD; ADCS FOSC/64; 
+    ADCON1 = 0xE0;
     
     // ADACT no_auto_trigger; 
     ADACT = 0x00;
@@ -81,8 +81,6 @@ void ADC_Initialize(void)
     // ADRESH 0; 
     ADRESH = 0x00;
     
-    // Enabling ADC interrupt.
-    PIE1bits.ADIE = 1;
 }
 
 void ADC_SelectChannel(adc_channel_t channel)
@@ -138,12 +136,6 @@ adc_result_t ADC_GetConversion(adc_channel_t channel)
 void ADC_TemperatureAcquisitionDelay(void)
 {
     __delay_us(200);
-}
-
-void ADC_ISR(void)
-{
-    // Clear the ADC interrupt flag
-    PIR1bits.ADIF = 0;
 }
 /**
  End of File

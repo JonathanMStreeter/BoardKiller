@@ -59,17 +59,17 @@ void PIN_MANAGER_Initialize(void)
     /**
     LATx registers
     */
-    LATA = 0x04;
+    LATA = 0x00;
 
     /**
     TRISx registers
     */
-    TRISA = 0x23;
+    TRISA = 0x07;
 
     /**
     ANSELx registers
     */
-    ANSELA = 0x23;
+    ANSELA = 0x05;
 
     /**
     WPUx registers
@@ -79,7 +79,7 @@ void PIN_MANAGER_Initialize(void)
     /**
     ODx registers
     */
-    ODCONA = 0x04;
+    ODCONA = 0x00;
 
 
 
@@ -87,6 +87,8 @@ void PIN_MANAGER_Initialize(void)
 
    
     
+	
+    RA5PPSbits.RA5PPS = 0x03;   //RA5->PWM6:PWM6;    
 }
   
 void PIN_MANAGER_IOC(void)

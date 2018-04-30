@@ -54,6 +54,7 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     WDT_Initialize();
+    PWM6_Initialize();
     ADC_Initialize();
     TMR2_Initialize();
     TMR0_Initialize();
@@ -67,8 +68,8 @@ void OSCILLATOR_Initialize(void)
     OSCCON3 = 0x00;
     // LFOEN disabled; ADOEN disabled; SOSCEN disabled; EXTOEN disabled; HFOEN disabled; 
     OSCEN = 0x00;
-    // HFFRQ 16_MHz; 
-    OSCFRQ = 0x06;
+    // HFFRQ 8_MHz; 
+    OSCFRQ = 0x04;
     // HFTUN 0; 
     OSCTUNE = 0x00;
     // Wait for PLL to stabilize
@@ -89,14 +90,14 @@ void PMD_Initialize(void)
     PMD0 = 0x00;
     // TMR0MD TMR0 enabled; TMR1MD TMR1 enabled; TMR2MD TMR2 enabled; NCOMD DDS(NCO) enabled; 
     PMD1 = 0x00;
-    // DACMD DAC disabled; CMP1MD CMP1 disabled; ADCMD ADC enabled; 
-    PMD2 = 0x42;
-    // CCP2MD CCP2 disabled; CCP1MD CCP1 disabled; PWM6MD PWM6 disabled; PWM5MD PWM5 disabled; CWG1MD CWG1 disabled; 
-    PMD3 = 0x73;
-    // MSSP1MD MSSP1 disabled; UART1MD EUSART enabled; 
-    PMD4 = 0x02;
-    // DSMMD DSM disabled; CLC1MD CLC1 disabled; CLC2MD CLC2 disabled; 
-    PMD5 = 0x07;
+    // DACMD DAC disabled; CMP1MD CMP1 enabled; ADCMD ADC enabled; 
+    PMD2 = 0x40;
+    // CCP2MD CCP2 enabled; CCP1MD CCP1 enabled; PWM6MD PWM6 enabled; PWM5MD PWM5 enabled; CWG1MD CWG1 enabled; 
+    PMD3 = 0x00;
+    // MSSP1MD MSSP1 enabled; UART1MD EUSART enabled; 
+    PMD4 = 0x00;
+    // DSMMD DSM enabled; CLC1MD CLC1 enabled; CLC2MD CLC2 enabled; 
+    PMD5 = 0x00;
 }
 /**
  End of File

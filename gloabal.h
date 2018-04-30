@@ -13,8 +13,8 @@ extern "C" {
 #endif
 
 
-    extern void relayTimerCallBack();
-    extern void timeCallBack();
+    extern void relayTimerCallBack_TMR2();
+    extern void timeCallBack_TMR0();
     
 
 #ifdef	__cplusplus

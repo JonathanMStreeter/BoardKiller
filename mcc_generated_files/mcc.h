@@ -51,11 +51,12 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "interrupt_manager.h"
+#include "pwm6.h"
 #include "tmr2.h"
 #include "tmr0.h"
 #include "adc.h"
 
-#define _XTAL_FREQ  32000000
+#define _XTAL_FREQ  16000000
 
 
 /**
